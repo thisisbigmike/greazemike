@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "vercel build",
-    "deploy": "vercel --prod"
+    "dev": "vercel dev"
   },
   "dependencies": {
     "resend": "^4.0.0"
-  },
-  "devDependencies": {
-    "vercel": "^37.0.0"
   }
 }
