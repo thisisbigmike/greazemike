@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     // Send email using Resend
     const data = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>', // Change this to your verified domain
-      to: ['greasemike@gmail.com'], // Your email address
+      to: ['greasemike2000@gmail.com'], // Your email address
       replyTo: email,
       subject: `New Contact from ${name}`,
       html: `
