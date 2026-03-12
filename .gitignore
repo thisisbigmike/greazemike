@@ -1,0 +1,13 @@
+# Environment variables
+.env.local
+.env
+
+# Vercel
+.vercel
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
