@@ -1,6 +1,7 @@
-# Environment variables
-.env.local
+# Environment variables (secrets — never commit)
 .env
+.env.*
+!.env.example
 
 # Vercel
 .vercel
@@ -8,6 +9,12 @@
 # Node modules
 node_modules/
 
-# OS files
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS files
 .DS_Store
 Thumbs.db
+.idea/
+.vscode/
