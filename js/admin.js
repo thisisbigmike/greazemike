@@ -77,14 +77,16 @@ async function loadList() {
     if (!data.length) { els['project-list'].innerHTML = `<p class="text-slate-400">No projects yet.</p>`; return; }
 
     els['project-list'].innerHTML = data.map(p => `
-        <div class="flex items-center gap-4 border border-gold-300/20 p-3 bg-panel">
-            <img src="${p.image_url || 'https://via.placeholder.com/80'}" alt="" class="w-16 h-16 object-cover flex-shrink-0">
-            <div class="flex-1 min-w-0">
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 border border-gold-300/20 p-3 bg-panel">
+            <img src="${p.image_url || 'https://placehold.co/80'}" alt="" class="w-14 h-14 sm:w-16 sm:h-16 object-cover flex-shrink-0">
+            <div class="flex-1 min-w-[8rem]">
                 <p class="text-white font-serif truncate">${escapeHtml(p.title)}</p>
                 <p class="text-slate-400 text-xs truncate">${escapeHtml(p.tag || '')} &middot; order ${p.sort_order ?? 0}</p>
             </div>
-            <button data-edit="${p.id}" class="text-gold-100 hover:text-white text-sm uppercase tracking-wider">Edit</button>
-            <button data-del="${p.id}" class="text-red-400 hover:text-red-300 text-sm uppercase tracking-wider">Delete</button>
+            <div class="flex items-center gap-4 ml-auto shrink-0">
+                <button data-edit="${p.id}" class="text-gold-100 hover:text-white text-sm uppercase tracking-wider">Edit</button>
+                <button data-del="${p.id}" class="text-red-400 hover:text-red-300 text-sm uppercase tracking-wider">Delete</button>
+            </div>
         </div>
     `).join('');
 
@@ -194,14 +196,16 @@ async function loadCsList() {
     if (!data.length) { els['cs-list'].innerHTML = `<p class="text-slate-400">No case studies yet.</p>`; return; }
 
     els['cs-list'].innerHTML = data.map(c => `
-        <div class="flex items-center gap-4 border border-gold-300/20 p-3 bg-panel">
-            <img src="${c.image_url || 'https://via.placeholder.com/80'}" alt="" class="w-16 h-16 object-cover flex-shrink-0">
-            <div class="flex-1 min-w-0">
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 border border-gold-300/20 p-3 bg-panel">
+            <img src="${c.image_url || 'https://placehold.co/80'}" alt="" class="w-14 h-14 sm:w-16 sm:h-16 object-cover flex-shrink-0">
+            <div class="flex-1 min-w-[8rem]">
                 <p class="text-white font-serif truncate">${escapeHtml(c.title)}</p>
                 <p class="text-slate-400 text-xs truncate">${escapeHtml(c.role || '')} &middot; order ${c.sort_order ?? 0}</p>
             </div>
-            <button data-csedit="${c.id}" class="text-gold-100 hover:text-white text-sm uppercase tracking-wider">Edit</button>
-            <button data-csdel="${c.id}" class="text-red-400 hover:text-red-300 text-sm uppercase tracking-wider">Delete</button>
+            <div class="flex items-center gap-4 ml-auto shrink-0">
+                <button data-csedit="${c.id}" class="text-gold-100 hover:text-white text-sm uppercase tracking-wider">Edit</button>
+                <button data-csdel="${c.id}" class="text-red-400 hover:text-red-300 text-sm uppercase tracking-wider">Delete</button>
+            </div>
         </div>
     `).join('');
 
